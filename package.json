@@ -1,0 +1,39 @@
+{
+  "name": "sweettext",
+  "version": "1.0.0",
+  "description": "A pastel-themed, girly website that transforms PDF content into polished, human-sounding writing",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "dev": "live-server --port=3000 --watch=css,js,index.html",
+    "build": "echo 'Build process - add bundling here'",
+    "test": "echo 'Tests - add testing framework here'"
+  },
+  "keywords": [
+    "pdf",
+    "ai",
+    "writing",
+    "humanize",
+    "gpt",
+    "pastel",
+    "girly",
+    "dashboard"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^3.11.174"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/sweettext.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/sweettext/issues"
+  },
+  "homepage": "https://github.com/yourusername/sweettext#readme"
+}

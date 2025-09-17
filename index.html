@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweetText 💖 - Your AI Writing Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <span>SweetText</span>
+            </div>
+            <nav class="nav">
+                <a href="#dashboard" class="nav-link active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </a>
+                <a href="#upload" class="nav-link">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    Upload
+                </a>
+                <a href="#history" class="nav-link">
+                    <i class="fas fa-history"></i>
+                    History
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h1>Welcome to SweetText! 💖</h1>
+                    <p>Transform your PDFs into beautiful, human-sounding writing with our adorable AI assistant</p>
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="stat-info">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">PDFs Processed</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-magic"></i>
+                            <div class="stat-info">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">AI Generations</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="stat-info">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-header">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h2>Upload Your PDF</h2>
+                        <p>Drop your PDF here or click to browse</p>
+                    </div>
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-content">
+                            <i class="fas fa-file-pdf upload-icon"></i>
+                            <p class="upload-text">Drag & drop your PDF file here</p>
+                            <p class="upload-subtext">or</p>
+                            <button class="upload-btn" id="uploadBtn">
+                                <i class="fas fa-plus"></i>
+                                Choose File
+                            </button>
+                        </div>
+                        <input type="file" id="fileInput" accept=".pdf" hidden>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Processing Pipeline -->
+            <section class="pipeline-section" id="pipelineSection" style="display: none;">
+                <h2>Processing Pipeline 🌸</h2>
+                <div class="pipeline-steps">
+                    <div class="step" data-step="1">
+                        <div class="step-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>PDF Upload</h3>
+                            <p>Your file is ready for processing</p>
+                        </div>
+                        <div class="step-status">
+                            <i class="fas fa-check"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-step="2">
+                        <div class="step-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>GPT Generation</h3>
+                            <p>Creating human-like content from your PDF</p>
+                        </div>
+                        <div class="step-status">
+                            <div class="loading-spinner"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-step="3">
+                        <div class="step-icon">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>HumanizeAI Smoothing</h3>
+                            <p>Making content sound naturally human</p>
+                        </div>
+                        <div class="step-status">
+                            <div class="loading-spinner"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-step="4">
+                        <div class="step-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>ZeroGPT Check</h3>
+                            <p>Verifying human-like quality</p>
+                        </div>
+                        <div class="step-status">
+                            <div class="loading-spinner"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-step="5">
+                        <div class="step-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Ready to Download</h3>
+                            <p>Your polished content is ready!</p>
+                        </div>
+                        <div class="step-status">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h2>Your Beautiful Content ✨</h2>
+                    <div class="results-actions">
+                        <button class="btn btn-primary" id="downloadBtn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </button>
+                        <button class="btn btn-secondary" id="copyBtn">
+                            <i class="fas fa-copy"></i>
+                            Copy
+                        </button>
+                    </div>
+                </div>
+                <div class="content-preview" id="contentPreview">
+                    <p>Your processed content will appear here...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Made with 💖 by SweetText - Making AI tools feel cozy and charming</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
